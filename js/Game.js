@@ -44,6 +44,7 @@ class Game {
     form.hide();
     
     Player.getPlayerInfo();
+    Player.getOrdinalInfo()
     
     if(allPlayers !== undefined){
       background(rgb(198,135,103));
@@ -93,8 +94,10 @@ class Game {
       player.update();
     }
 
-    if(player.distance > 3860){
+    if(player.distance > 100){
       gameState = 2;
+      player.ordinal += 1
+      player.updateOrdinal(player.ordinal)
     }
    
     drawSprites();
@@ -102,5 +105,6 @@ class Game {
 
   end(){
     console.log("Game Ended");
+    console.log(player.ordinal)
   }
 }
