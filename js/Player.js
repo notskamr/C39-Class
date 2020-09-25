@@ -26,8 +26,8 @@ getOrdinal() {
 }
   updateOrdinal(ordinal) {
 
-    database.ref('/').update({
-      ordinal: ordinal
+    database.ref('/'+ this.index).update({
+     ordinal: ordinal
     })
   }
 
@@ -36,7 +36,7 @@ getOrdinal() {
     database.ref(playerIndex).set({
       name:this.name,
       distance:this.distance,
-      ordinal:this.ordinal
+      ordinal: this.ordinal
     });
   }
 
